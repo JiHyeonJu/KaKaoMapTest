@@ -13,8 +13,8 @@
         </shape>
     </item>
     <item
-        android:width="40dp"
-        android:height="40dp"
-        android:drawable="@drawable/tracking_pin"
+        android:width="20dp"
+        android:height="20dp"
+        android:drawable="@drawable/location"
         android:gravity="center" />
 </layer-list>

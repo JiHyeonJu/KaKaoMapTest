@@ -133,7 +133,7 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
             isTrackingMode = true
             Toast.makeText(
                 mContext,
-                "현재 위치를 따라가며 중심좌표가 변경됩니다\n\n* 지도중심이 아닌 현재위치 근처로 검색됩니다 *",
+                "현재 위치를 따라가며 중심좌표가 변경됩니다\n* 지도중심이 아닌 현재위치 근처로 검색됩니다 *",
                 Toast.LENGTH_LONG
             ).show()
         }

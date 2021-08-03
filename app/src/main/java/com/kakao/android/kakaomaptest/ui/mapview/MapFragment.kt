@@ -1,6 +1,7 @@
 package com.kakao.android.kakaomaptest.ui.mapview
 
 import android.content.Context
+import android.graphics.Color
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
@@ -102,17 +103,19 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
         search_pharmacy_btn.setOnClickListener(listener)
         search_gas_btn.setOnClickListener(listener)
 
-        my_location_btn.setOnClickListener {
-            // GPS가 켜진 경우 트레킹모드 진입할 수 있도록 한다
+        tracking_btn.setOnClickListener {
+            // GPS가 켜진 경우에만 트레킹모드 진입할 수 있도록 한다
             if (checkLocationService()) {
                 if (it.isSelected) {
                     stopTracking()
+                    it.background = ContextCompat.getDrawable(mContext, R.drawable.tracking_btn_background)
                 } else {
                     startTracking(false)
+                    it.background = ContextCompat.getDrawable(mContext, R.drawable.tracking_btn_selected_background)
                 }
                 it.isSelected = !it.isSelected
             } else {
-                Toast.makeText(mContext, "GPS를 켜주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(mContext, "위치 설정을 켜주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -125,7 +128,11 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
     private fun startTracking(isFirstInit: Boolean) {
         if (!isFirstInit) {
             isTrackingMode = true
-            Toast.makeText(mContext, "현재 위치를 따라가며 중심좌표가 변경됩니다", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                mContext,
+                "현재 위치를 따라가며 중심좌표가 변경됩니다\n트레킹 모드에서는 지도중심이 아닌 현재위치 근처로 검색됩니다",
+                Toast.LENGTH_SHORT
+            ).show()
         }
         mMapView.currentLocationTrackingMode =
             MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading

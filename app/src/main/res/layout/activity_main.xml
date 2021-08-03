@@ -13,14 +13,14 @@
         android:layout_height="0dp"
         android:layout_weight="1.7"
         android:id="@+id/fragment_map"
-        android:name="com.kakao.android.kakaomaptest.ui.map.MapFragment"
+        android:name="com.kakao.android.kakaomaptest.ui.mapview.MapFragment"
         tools:layout="@layout/fragment_map" />
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fragment_list"
-        android:name="com.kakao.android.kakaomaptest.ui.markerlist.MarkerListFragment"
+        android:name="com.kakao.android.kakaomaptest.ui.markerlistview.MarkerListFragment"
         tools:layout="@layout/fragment_list" />
 
 </LinearLayout>

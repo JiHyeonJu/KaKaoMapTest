@@ -61,8 +61,8 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/my_location_btn"
-        style="@style/category_btn"
+        android:id="@+id/tracking_btn"
+        android:background="@drawable/tracking_btn_background"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"

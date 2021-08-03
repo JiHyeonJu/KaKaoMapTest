@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.SplashActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@style/AppFullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

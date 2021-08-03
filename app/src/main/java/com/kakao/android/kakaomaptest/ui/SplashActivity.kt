@@ -1,17 +1,18 @@
 package com.kakao.android.kakaomaptest.ui
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.*
 import com.kakao.android.kakaomaptest.R
 
-class SplashActivity : Activity() {
+class SplashActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "KM/SplashActivity"
 
@@ -61,15 +62,23 @@ class SplashActivity : Activity() {
                 this, Manifest.permission.ACCESS_FINE_LOCATION
             )
         ) {
-            Toast.makeText(this, "앱 실행을 위해서 권한이 필요합니다", Toast.LENGTH_LONG).show()
-            requestPermissions(this, permissions, PERMISSION_REQUEST_CODE)
-            // todo:Snackbar로 변경
-            /* Snackbar.make(
-                 mLayout, "이 앱을 실행하려면 카메라와 외부 저장소 접근 권한이 필요합니다.",
-                 Snackbar.LENGTH_INDEFINITE
-             ).setAction("확인", View.OnClickListener() {
-                 requestPermissions(this@SplashActivity, permissions, PERMISSION_REQUEST_CODE)
-             }).show()*/
+            var builder = AlertDialog.Builder(this)
+            builder.setMessage("권한이 없어 해당 기능을 사용하실 수 없습니다.\n권한을 허용하시면 사용하실 수 있습니다")
+            builder.setCancelable(false)
+            builder.setPositiveButton("허용") { _, _ ->
+                requestPermissions(this, permissions, PERMISSION_REQUEST_CODE)
+
+            }
+            builder.setNegativeButton("거부") { _, _ ->
+                Toast.makeText(
+                    this,
+                    "위치 정보 엑세스 권한이 없어 해당 기능을 사용하실 수 없습니다.",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+                finish()
+            }
+            builder.create().show()
         } else {
             // 최초 권한 요청시
             requestPermissions(this, permissions, PERMISSION_REQUEST_CODE)
@@ -96,13 +105,16 @@ class SplashActivity : Activity() {
                     ) {
                         Toast.makeText(
                             this,
-                            "위치 권한이 거부되었습니다",
-                            Toast.LENGTH_LONG
+                            "위치 정보 엑세스 권한이 없어 해당 기능을 사용하실 수 없습니다.",
+                            Toast.LENGTH_SHORT
                         ).show()
                     } else {
-                        // 사용자가 거부한 경우 => 설정에서 권한 변경 필요
-                        Toast.makeText(this, "권한이 거부되었습니다\n설정에서 위치 권한을 허용해주세요", Toast.LENGTH_LONG)
-                            .show()
+                        // 2번 이상 사용자가 거부한 경우 => 설정에서 권한 변경 필요
+                        Toast.makeText(
+                            this,
+                            "권한이 거부되었습니다.\n권한을 허용하시려면 설정을 눌러주세요\n\n필요권한 : 위치 정보 액세스",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                     finish()
                 }

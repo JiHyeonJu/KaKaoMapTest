@@ -107,10 +107,14 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
             if (checkLocationService()) {
                 if (it.isSelected) {
                     stopTracking()
-                    it.background = ContextCompat.getDrawable(mContext, R.drawable.tracking_btn_background)
+                    it.background =
+                        ContextCompat.getDrawable(mContext, R.drawable.tracking_btn_background)
                 } else {
                     startTracking(false)
-                    it.background = ContextCompat.getDrawable(mContext, R.drawable.tracking_btn_selected_background)
+                    it.background = ContextCompat.getDrawable(
+                        mContext,
+                        R.drawable.tracking_btn_selected_background
+                    )
                 }
                 it.isSelected = !it.isSelected
             } else {

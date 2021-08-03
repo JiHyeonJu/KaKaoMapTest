@@ -7,14 +7,15 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:allowBackup="true"
         android:name=".MyApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_map_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_map_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KaKaoMapTest"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".ui.SplashActivity"
             android:theme="@style/AppFullScreenTheme">
@@ -25,16 +26,11 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name" />
 
-        <!--<meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="110a43a1f10b205c5860d0653cecada5" />-->
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="83aa671316c73b65221252b4a7931482" />
 
     </application>
-
 </manifest>

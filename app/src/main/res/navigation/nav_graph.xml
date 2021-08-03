@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.kakao.android.kakaomaptest.ui.map.MapFragment"
+        android:name="com.kakao.android.kakaomaptest.ui.mapview.MapFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_map">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.kakao.android.kakaomaptest.ui.markerlist.MarkerListFragment"
+        android:name="com.kakao.android.kakaomaptest.ui.markerlistview.MarkerListFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_list">
 

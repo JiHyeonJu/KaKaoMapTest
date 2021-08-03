@@ -1,4 +1,4 @@
-package com.kakao.android.kakaomaptest.ui.markerlist
+package com.kakao.android.kakaomaptest.ui.markerlistview
 
 import android.content.Context
 import android.os.Bundle

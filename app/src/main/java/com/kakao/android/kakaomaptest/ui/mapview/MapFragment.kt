@@ -1,4 +1,4 @@
-package com.kakao.android.kakaomaptest.ui.map
+package com.kakao.android.kakaomaptest.ui.mapview
 
 import android.content.Context
 import android.location.LocationManager

@@ -1,4 +1,4 @@
-package com.kakao.android.kakaomaptest.ui.markerlist
+package com.kakao.android.kakaomaptest.ui.markerlistview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

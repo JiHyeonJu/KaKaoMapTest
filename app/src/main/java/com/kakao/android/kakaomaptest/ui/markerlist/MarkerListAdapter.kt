@@ -23,7 +23,6 @@ class MarkerListAdapter(private val context: Context, private val viewModel: Map
         const val NOT_SELECTED = -1
     }
 
-    //private var dataList: ArrayList<ArrayList<Place>> = ArrayList(4) => 이걸로 하면 dataList[0]이 비었다고 지랄지랄
     private var dataList = ArrayList<Place>()
     private var isNoNeedToMoreButton = false
     private var selectedPosition = NOT_SELECTED

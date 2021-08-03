@@ -10,7 +10,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat.*
 import com.kakao.android.kakaomaptest.R
-import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : Activity() {
     companion object {
@@ -57,7 +56,7 @@ class SplashActivity : Activity() {
             Manifest.permission.ACCESS_COARSE_LOCATION
         )
 
-        // 사용자가 이전에 한번 거부한 경우, 설명과 함께 권한을 요청한다
+        // 사용자가 이전에 한번 거부한 경우, 설명과 함께 권한을 요청
         if (shouldShowRequestPermissionRationale(
                 this, Manifest.permission.ACCESS_FINE_LOCATION
             )
@@ -89,10 +88,8 @@ class SplashActivity : Activity() {
                 ) {
                     Log.d(TAG, "permission_granted" + grantResults[0])
                     startMainActivity()
-                    // Permission is granted. Continue the action or workflow
-                    // in your app.
                 } else {
-                    // 사용자가 이전에 한번 거부한 경우(다음번 앱에서 권한 설정 가능)
+                    // 사용자가 첫번째로 거부한 경우 => 다음번 앱에서 권한 설정 가능
                     if (shouldShowRequestPermissionRationale(
                             this, Manifest.permission.ACCESS_FINE_LOCATION
                         )
@@ -103,6 +100,7 @@ class SplashActivity : Activity() {
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
+                        // 사용자가 거부한 경우 => 설정에서 권한 변경 필요
                         Toast.makeText(this, "권한이 거부되었습니다\n설정에서 위치 권한을 허용해주세요", Toast.LENGTH_LONG)
                             .show()
                     }

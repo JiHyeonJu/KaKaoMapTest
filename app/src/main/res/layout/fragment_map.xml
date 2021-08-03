@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/search_refresh_btn"
+        style="@style/category_btn"
+        android:layout_width="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:elevation="3dp"
+        android:text="새로고침"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp">
+
+        <Button
+            android:id="@+id/search_cafe_btn"
+            style="@style/category_btn"
+            android:layout_marginBottom="10dp"
+            android:elevation="3dp"
+            android:tag="CE7"
+            android:text="카페" />
+
+        <Button
+            android:id="@+id/search_hospital_btn"
+            style="@style/category_btn"
+            android:layout_marginStart="7dp"
+            android:elevation="3dp"
+            android:tag="HP8"
+            android:text="병원" />
+
+        <Button
+            android:id="@+id/search_pharmacy_btn"
+            style="@style/category_btn"
+            android:layout_marginStart="7dp"
+            android:elevation="3dp"
+            android:tag="PM9"
+            android:text="약국" />
+
+        <Button
+            android:id="@+id/search_gas_btn"
+            style="@style/category_btn"
+            android:layout_marginStart="7dp"
+            android:elevation="3dp"
+            android:tag="OL7"
+            android:text="주유소" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/my_location_btn"
+        style="@style/category_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>

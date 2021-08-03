@@ -72,7 +72,7 @@ class SplashActivity : AppCompatActivity() {
             builder.setNegativeButton("거부") { _, _ ->
                 Toast.makeText(
                     this,
-                    "위치 정보 엑세스 권한이 없어 해당 기능을 사용하실 수 없습니다.",
+                    "위치 정보 엑세스 권한이 없어\n해당 기능을 사용하실 수 없습니다.",
                     Toast.LENGTH_SHORT
                 )
                     .show()
@@ -105,14 +105,14 @@ class SplashActivity : AppCompatActivity() {
                     ) {
                         Toast.makeText(
                             this,
-                            "위치 정보 엑세스 권한이 없어 해당 기능을 사용하실 수 없습니다.",
+                            "위치 정보 엑세스 권한이 없어\n해당 기능을 사용하실 수 없습니다.",
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
                         // 2번 이상 사용자가 거부한 경우 => 설정에서 권한 변경 필요
                         Toast.makeText(
                             this,
-                            "권한이 거부되었습니다.\n권한을 허용하시려면 설정을 눌러주세요\n\n필요권한 : 위치 정보 액세스",
+                            "권한이 거부되었습니다.\n권한을 허용하시려면 설정을 눌러주세요\n\n필요 권한 : 위치 정보 액세스",
                             Toast.LENGTH_SHORT
                         ).show()
                     }

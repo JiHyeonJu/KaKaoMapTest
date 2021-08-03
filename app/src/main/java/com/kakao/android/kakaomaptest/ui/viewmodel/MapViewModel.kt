@@ -21,8 +21,8 @@ class MapViewModel(private val repository: MapRepository) : ViewModel() {
     private var _markerItemName = MutableLiveData<String>()
     val liveMarkerItem: LiveData<String> get() = _markerItemName
 
-    private lateinit var x : String
-    private lateinit var y : String
+    private lateinit var x: String
+    private lateinit var y: String
     private var categoryCode = "#CE7"
 
     // 각 카테고리별 data list
@@ -38,7 +38,7 @@ class MapViewModel(private val repository: MapRepository) : ViewModel() {
         this.categoryCode = categoryCode
     }
 
-    fun getCategoryCode() : String {
+    fun getCategoryCode(): String {
         return this.categoryCode
     }
 

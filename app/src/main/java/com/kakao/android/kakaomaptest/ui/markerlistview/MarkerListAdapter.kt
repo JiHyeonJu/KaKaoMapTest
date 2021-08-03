@@ -67,7 +67,6 @@ class MarkerListAdapter(private val context: Context, private val viewModel: Map
 
             holder.itemView.setOnClickListener {
                 viewModel.setMarkerItem(dataList[position].place_url)
-                //(context as MainActivity).setDataAtListFragment(dataList[position].place_url)
                 Log.d(TAG, "Click index : $position, data : $dataList")
 
                 if (selectedPosition != NOT_SELECTED) {
@@ -75,7 +74,6 @@ class MarkerListAdapter(private val context: Context, private val viewModel: Map
                 }
                 selectedPosition = position
                 notifyItemChanged(selectedPosition)
-                // Do your another stuff for your onClick
             }
         }
     }

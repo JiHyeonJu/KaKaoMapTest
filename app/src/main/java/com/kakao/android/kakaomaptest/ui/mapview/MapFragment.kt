@@ -104,7 +104,7 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
         search_gas_btn.setOnClickListener(listener)
 
         tracking_btn.setOnClickListener {
-            // GPS가 켜진 경우에만 트레킹모드 진입할 수 있도록 한다
+            // GPS가 켜진 경우에만 트레킹모드 진입할 수 있도록
             if (checkLocationService()) {
                 if (it.isSelected) {
                     stopTracking()

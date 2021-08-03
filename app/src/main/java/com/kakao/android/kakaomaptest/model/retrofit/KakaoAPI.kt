@@ -7,14 +7,6 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface KakaoAPI {
-    /*@GET("v2/local/search/keyword.json")
-    fun getSearchKeyword(
-            @Header("Authorization") key: String,
-            @Query("query") query: String
-            @Query("category_group_code") category: String
-
-    ): Call<ResultSearchKeyword>*/
-
     @GET("v2/local/search/category.json")
     suspend fun getSearchCategory(
         @Header("Authorization") token: String?,

@@ -10,7 +10,6 @@ import com.kakao.android.kakaomaptest.R
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

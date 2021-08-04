@@ -131,6 +131,7 @@ class MapFragment : Fragment(), MapView.CurrentLocationEventListener, MapView.PO
     private fun startTracking(isFirstInit: Boolean) {
         if (!isFirstInit) {
             isTrackingMode = true
+            search_refresh_btn.visibility = View.GONE
             Toast.makeText(
                 mContext,
                 "현재 위치를 따라가며 중심좌표가 변경됩니다\n* 지도중심이 아닌 현재위치 근처로 검색됩니다 *",
